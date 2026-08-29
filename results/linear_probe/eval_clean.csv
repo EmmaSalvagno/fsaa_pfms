@@ -1,0 +1,4 @@
+target_model_name,source_model_name,split,feature_type,psnr,defence,sigma,balanced_accuracy
+uni_v1,,test,clean,,False,,0.9467406014061254
+conch_v1,,test,clean,,False,,0.9287720587572776
+virchow_v1,,test,clean,,False,,0.9476046831977823

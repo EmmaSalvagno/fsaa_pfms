@@ -1,0 +1,17 @@
+.DS_Store
+
+# Dataset folder
+data/*
+!data/.gitkeep
+
+# Pathology Foundation Model checkpoint folder
+model_weights/*
+!model_weights/.gitkeep
+
+# Adversarial images folder
+adv_images/*
+!adv_images/.gitkeep
+
+# Extracted features folder
+features/*
+!features/.gitkeep
