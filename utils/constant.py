@@ -1,6 +1,6 @@
 import os
 
-BASE_DIR = '/content/drive/MyDrive/fsaa_pfms'
+BASE_DIR = '/path/to/fsaa_pfms'
 
 SEED = 42
 SPLITS = ['train', 'valid', 'test']
