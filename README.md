@@ -17,12 +17,12 @@ This repository contains the full implementation used to evaluate the adversaria
 │       └── psnr_<XdB>/
 │           └── <split>_batch_<NNNN>.pt
 ├── data/                                    # TCGA-UT dataset
-├── features/                                # Feature embeddings
-│   ├── clean/                               # Extracted from clean images, with and without Gaussian smoothing
+├── features/                                
+│   ├── clean/                               # Feature embeddings extracted from clean images, with and without Gaussian smoothing
 │   │   └── <model_name>/
 │   │       ├── <split>.h5
 │   │       └── <split>_sigma<σ>.h5
-│   └── adversarial/                         # Extracted from adversarial images, with and without Gaussian smoothing
+│   └── adversarial/                         # Feature embeddings extracted from adversarial images, with and without Gaussian smoothing
 │       └── <target_model_name>/
 │           └── psnr_<XdB>/
 │               ├── <split>_wb.h5
