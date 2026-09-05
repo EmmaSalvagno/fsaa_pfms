@@ -9,6 +9,7 @@ This repository contains the full implementation used to evaluate the adversaria
 ├── 01_feature_extraction.ipynb              # Feature extraction from clean and adversarial images with and without defense 
 ├── 02_adv_img_visualization.ipynb           # Adversarial image visualization
 ├── 03_robustness_eval.ipynb                 # Robustness evaluation through UMAP, cosine similarity and linear probing 
+├── report.pdf                               # Report containing the project details
 ├── environment.yml                          # Conda environment specification
 ├── setup.sh                                 # Environment setup script
 ├── README.md
