@@ -51,22 +51,21 @@ This repository contains the full implementation used to evaluate the adversaria
 git clone https://github.com/EmmaSalvagno/fsaa_pfms.git
 cd fsaa_pfms
 ```
-
-### 2. Set the base directory
-
-The `BASE_DIR` variable in `utils/constant.py` serves as the root path for all project files and outputs. Update this path to point to wherever you cloned this repository locally:
-
-```python
-BASE_DIR = '/path/to/fsaa_pfms'
-```
-
-### 3. Create the Conda environment
+### 2. Create the Conda environment
 
 Run `setup.sh` to create the Conda environment with all required dependencies, then activate it:
 
 ```bash
 bash setup.sh
 conda activate fsaa_pfms
+```
+
+### 3. Set the base directory
+
+The `BASE_DIR` variable in `utils/constant.py` serves as the root path for all project files and outputs. Update this path to point to wherever you cloned this repository locally:
+
+```python
+BASE_DIR = '/path/to/fsaa_pfms'
 ```
 
 
@@ -99,19 +98,28 @@ Access to each model must be requested and approved on Hugging Face before downl
 - **CONCH**: [request access](https://huggingface.co/MahmoodLab/CONCH)
 - **Virchow**: [request access](https://huggingface.co/paige-ai/Virchow)
 
-Once access is granted, enter your Hugging Face token when prompted in `01_feature_extraction.ipynb`, and the notebook will automatically download the checkpoints into `model_weights/`.
+Once access is granted, enter your Hugging Face token when prompted in `01_feature_extraction.ipynb`, and the notebook will automatically download the model checkpoints into `model_weights/`.
 
 
 ## Pipeline
 
 The experimental pipeline is organized into three sequential notebooks:
 
-1. **`01_feature_extraction.ipynb`** — Extracts features from clean images with and without Gaussian smoothing defense via `run_clean_feature_extraction()`, generates adversarial images via `run_fsaa()`, and extracts features from adversarial images via `run_adv_feature_extraction()`. Adversarial images are saved as PyTorch tensors in the `adv_images/` directory, while feature embeddings are stored as HDF5 files in `features/`.
+1. **`01_feature_extraction.ipynb`** — Extracts features from clean images with and without Gaussian smoothing defense via `run_clean_feature_extraction()`, generates adversarial images via `run_fsaa()`, and extracts features from adversarial images with and without Gaussian smoothing defense via `run_adv_feature_extraction()`. Adversarial images are saved as PyTorch tensors in the `adv_images/` directory, while feature embeddings are stored as HDF5 files in `features/`.
 
 2. **`02_adv_img_visualization.ipynb`** — Visualizes adversarial images and the effects of the Gaussian smoothing defense, saving the output to the `results/img_vis/` directory.
 
 3. **`03_robustness_eval.ipynb`** — Runs the full evaluation protocol: feature space analysis through UMAP projections and cosine similarity, alongside representation separability assessment via linear probing. Outputs are saved to the `results/umap/`, `results/embed_shift/` and `results/linear_probe/` directories. 
 
-## Author
+## References
 
+Pulfer, B., Belousov, Y., Kinakh, V., Furon, T., & Voloshynovskiy, S. (2025, June). Task-Agnostic Attacks Against Vision Foundation Models. In 2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW) (pp. 3570-3581). IEEE.
+
+Chen, R. J., Ding, T., Lu, M. Y., Williamson, D. F., Jaume, G., Song, A. H., ... & Mahmood, F. (2024). Towards a general-purpose foundation model for computational pathology. Nature medicine, 30(3), 850-862.
+
+Lu, M. Y., Chen, B., Williamson, D. F., Chen, R. J., Liang, I., Ding, T., ... & Mahmood, F. (2024). A visual-language foundation model for computational pathology. Nature medicine, 30(3), 863-874.
+
+Vorontsov, E., Bozkurt, A., Casson, A., Shaikovski, G., Zelechowski, M., Liu, S., ... & Fuchs, T. J. (2023). Virchow: A million-slide digital pathology foundation model. arXiv preprint arXiv:2309.07778.
+
+## Author
 Emma Salvagno — emma.salvagno@studio.unibo.it
